@@ -16,12 +16,12 @@ export const FourCustomNode = ({
 
   return (
     <div className={'text-md rounded-full bg-white border border-solid border-black px-3 py-1 flex gap-2 justify-center items-center'}>
-      <button className={'w-4 h-4 rounded-full bg-gray/9 border border-solid border-gray'} />
+      <button className={'w-4 h-4 rounded-full bg-green/9 border border-solid border-green'} />
       <div> {label} </div>
 
       { type !== 'start' && (targetPosition === Position.Top ?
         <Handle type={'target'} position={Position.Top} id={'t'} />
-        : 
+        :
         <Handle type={'target'} position={Position.Left} id={'l'} />
       )}
       { type !== 'end' && (sourcePosition === Position.Bottom ?

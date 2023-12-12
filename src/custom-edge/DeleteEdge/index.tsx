@@ -11,7 +11,7 @@ export const DeleteEdge = ({ id, ...props }: Props) => {
       <BaseEdge id={id} path={edgePath} />
       <EdgeLabelRenderer>
         <button
-          className={'bg-red rounded-full flex justify-center items-center text-2 w-6 h-6 text-white absolute'}
+          className={'nodrag nopan bg-red rounded-full flex justify-center items-center text-2 w-6 h-6 text-white absolute'}
           style={{
             transform: `translate(-50%, -50%) translate(${labelX}px, ${labelY}px)`,
             pointerEvents: 'all',

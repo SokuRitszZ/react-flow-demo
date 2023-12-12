@@ -3,7 +3,7 @@ import { Edge, Node, Position } from 'reactflow';
 
 interface Option { direction?: 'TB' | 'LR'; }
 
-export const sortLayout = (nodes: Node[], edges: Edge[], options?: Option) => {
+export const dagreLayout = (nodes: Node[], edges: Edge[], options?: Option) => {
   const g = new Dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({}));
 
   const { direction = 'TB' } = options ?? {};
