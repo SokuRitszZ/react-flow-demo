@@ -1,2 +1,2 @@
 npx vite build
-cp _redirect ./dist/
+cp _redirects ./dist/
