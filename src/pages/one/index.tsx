@@ -9,7 +9,7 @@ import {
   useNodesState, useEdgesState, OnConnect, addEdge,
 } from 'reactflow';
 import React from 'react';
-import { initialNodes, initialEdges } from './constants.ts';
+import { initialNodes, initialEdges } from './constants';
 import { TextUpdaterNode, RangeNode, FourCustomNode } from '@/custom-node';
 import { DeleteEdge } from '@/custom-edge';
 import { dagreLayout, hierarchyLayout, middleWay } from '@/utils';
@@ -80,8 +80,9 @@ const PageOne = () => {
               D3 HIERARCHY LR SORT
             </button>
           </div>
-          <div className={'flex'}>
-            <button className={'text-xl p-4 rounded-2'} onClick={() => handleLayout('LR', 'middle-way')}>MIDDLE WAY</button>
+          <div className={'flex gap-4'}>
+            <button className={'text-xl p-4 rounded-2'} onClick={() => handleLayout('LR', 'middle-way')}>LR MIDDLE WAY</button>
+            <button className={'text-xl p-4 rounded-2'} onClick={() => handleLayout('TB', 'middle-way')}>TB MIDDLE WAY</button>
           </div>
         </div>
       </Panel>

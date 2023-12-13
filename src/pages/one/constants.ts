@@ -1,18 +1,6 @@
-let INIT_X = 0;
+import { n as _n, e as _e } from '@/utils';
 
-const n = (name: string, type?: 'start' | 'end') => ({
-  id: name,
-  type: 'FourCustomNode',
-  data: { label: name, type },
-  position: { x: 0, y: INIT_X += 20 },
-});
-
-const e = (source: string, target: string) => ({
-  id: `${source}-${target}`,
-  source,
-  target,
-  animated: true,
-});
+const n = _n('FourCustomNode');
 
 export const initialNodes = [
   n('IDEA', 'start'),
@@ -32,6 +20,8 @@ export const initialNodes = [
   n('TO LAUNCH'),
   n('LAUNCHED', 'end'),
 ];
+
+const e = _e('');
 
 export const initialEdges = [
   e('IDEA', 'UI'),
