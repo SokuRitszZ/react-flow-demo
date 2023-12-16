@@ -3,7 +3,11 @@ import { Edge, Node, Position } from 'reactflow';
 
 const g = tree();
 
-export const hierarchyLayout = (nodes: Node[], edges: Edge[], { direction = 'TB' }: any) => {
+interface Option {
+  direction: 'TB' | 'BT' | 'LR' | 'RL'
+}
+
+export const hierarchyLayout = (nodes: Node[], edges: Edge[], option?: Option) => {
   if (nodes.length === 0) return { nodes, edges };
 
   const { width, height } = document
@@ -19,6 +23,7 @@ export const hierarchyLayout = (nodes: Node[], edges: Edge[], { direction = 'TB'
 
   // step2
   const layout = g.nodeSize([width * 2, height * 2])(root);
+  const { direction = 'TB' } = option ?? {};
   const newNodes = layout
     .descendants()
     .map((node: any) => ({

@@ -1,6 +1,10 @@
 export * from './dagreLayout';
 export * from './hierarchyLayout';
 export * from './middleWay';
+export * from './useAddBranch';
+export * from './useDeleteCond';
+export * from './pureMiddleWay';
+export * from './myLayout';
 
 let INIT_X = 0;
 
@@ -13,7 +17,7 @@ export const n = (nodeType: string, dist = 20) => {
   });
 };
 
-export const e = (type: string) => {
+export const e = (type?: string) => {
   return (source: string, target: string) => ({
     id: `${source}-${target}`,
     type,
@@ -24,5 +28,5 @@ export const e = (type: string) => {
 };
 
 export const gid = () => {
-  return Date.now() + '';
+  return Math.random() + '';
 };

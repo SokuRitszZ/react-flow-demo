@@ -28,6 +28,7 @@ export const DeletableNode = ({ data: { label }, id }: Props) => {
       setEdges((eds) => [...eds.filter(ed => ![targetEdge.id, sourceEdge.id].includes(ed.id)), {
         id: gid(),
         type: 'CommonEdge',
+        animated: true,
         source: source.id,
         target: target.id,
       }]);
@@ -42,7 +43,7 @@ export const DeletableNode = ({ data: { label }, id }: Props) => {
       <div
         onMouseEnter={() => setDeletable(true)}
         onMouseLeave={() => setDeletable(false)}
-        className={'px-3 py-1 w-200px z-0 bg-white border border-solid border-black rounded-1 relative'}
+        className={'px-3 py-1 ct w-100px z-0 bg-white border border-solid border-black rounded-1 relative'}
       >
         {deletable &&
           <div
@@ -50,7 +51,7 @@ export const DeletableNode = ({ data: { label }, id }: Props) => {
             className={'nodrag bg-red w-3 h-3 rounded-full absolute right-0 top-0 translate-x-50% -translate-y-50% cursor-pointer'}
           />
         }
-        {label}
+        {label.slice(0, 5)}
       </div>
       <Handle className={'z-1'} type={'source'} position={Position.Bottom} />
     </>

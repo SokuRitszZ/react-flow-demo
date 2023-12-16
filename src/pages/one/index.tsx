@@ -60,6 +60,7 @@ const PageOne = () => {
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       onConnect={handleConnect}
+      nodeOrigin={[0.5, 0.0]}
       fitView
     >
       <Panel position="top-right">
